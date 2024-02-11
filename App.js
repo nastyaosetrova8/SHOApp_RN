@@ -1,13 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen"
-import { useCallback } from 'react';
+import BottomTabs from "./navigation/BottomTabs";
+import { CardDescriptionScreen, NewMotion } from "./screens";
 
-const Stack = createNativeStackNavigator();
+const NestedScreen = createNativeStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,23 +19,31 @@ export default function App() {
     return null;
   }
 
-
   return (
-   <NavigationContainer>
-    
-   </NavigationContainer>
+    <NavigationContainer>
+      <NestedScreen.Navigator>
+        <NestedScreen.Screen
+          name="BottomTabs"
+          component={BottomTabs}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <NestedScreen.Screen
+          name="CardDescriptionScreen"
+          component={CardDescriptionScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <NestedScreen.Screen
+          name="CartsList"
+          component={NewMotion}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </NestedScreen.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textStyle: {
-    fontFamily: "Roboto700",
-    fontSize: 20,
-  }
-});

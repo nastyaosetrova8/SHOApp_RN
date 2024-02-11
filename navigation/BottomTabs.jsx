@@ -1,8 +1,6 @@
-import { View, Text } from "react-native";
-import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, SearchScreen, ProfileScreen } from "../screens";
-import { Feather } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Tabs = createBottomTabNavigator();
 const screenOptions = {
@@ -15,7 +13,7 @@ const screenOptions = {
     right: 0,
     left: 0,
     elevation: 0,
-    height: 60,
+    height: 80,
   },
 };
 
@@ -28,8 +26,8 @@ const BottomTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <Feather
-                name={focused ? "home" : "home-otline"}
+              <MaterialIcons
+                name={"home"}
                 size={24}
                 color={focused ? "#FAA62A" : "#212121CC"}
               />
@@ -43,10 +41,10 @@ const BottomTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <Feather
-                name={"searchScreen"}
+              <MaterialIcons
+                name={"search"}
                 size={24}
-                color={focused ? "#FAA62A" : "#212121CC"}
+                color={focused ? "#FAA62A" : "#503206"}
               />
             );
           },
@@ -58,10 +56,10 @@ const BottomTabs = () => {
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <Feather
-                name={focused ? "profileScreen" : "profileScreen-otline"}
+              <MaterialIcons
+                name={"person"}
                 size={24}
-                color={focused ? "#FAA62A" : "#212121CC"}
+                color={focused ? "#FAA62A" : "#503206"}
               />
             );
           },
