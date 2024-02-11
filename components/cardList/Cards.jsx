@@ -25,7 +25,7 @@ const Cards = () => {
           keyExtractor={(item) => item._id}
           renderItem={({ item }) => <CardView item={item} />}
           horizontal
-          contentContainerStyle={{ columnGap: 16 }}
+          contentContainerStyle={{ columnGap: 10 }}
         />
       )}
     </View>
