@@ -9,7 +9,7 @@ import {
   View,
 } from "react-native";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import { SIZE } from "../assets/vars";
 import SearchComponent from "../components/SearchComponent";

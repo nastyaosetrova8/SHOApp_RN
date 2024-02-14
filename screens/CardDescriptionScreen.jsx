@@ -41,7 +41,6 @@ const CardDescriptionScreen = ({ navigation }) => {
       </View>
       <Image
         source={{ uri: item.image }}
-        // source={require("../assets/images/icedCoffeeLatteWithCinnamonWhippedCream.webp")}
         style={styles.img}
       />
       <View style={styles.info}>
@@ -114,8 +113,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "#BFA47B",
-    // justifyContent: "center",
-    // alignItems: "center"
   },
   top: {
     position: "absolute",

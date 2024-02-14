@@ -2,19 +2,20 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SHADOW } from "../assets/vars";
 import { useNavigation } from "@react-navigation/native";
 
-
-const SearchComponent = ({item}) => {
-
-    const navigation = useNavigation();
+const SearchComponent = ({ item }) => {
+  const navigation = useNavigation();
   return (
     <View>
-      <TouchableOpacity style={styles.wrapper} onPress={() => navigation.navigate('CardDescriptionScreen', {item})}>
+      <TouchableOpacity
+        style={styles.wrapper}
+        onPress={() => navigation.navigate("CardDescriptionScreen", { item })}
+      >
         <View style={styles.imgWrapper}>
           <Image source={{ uri: item.image }} style={styles.img} />
         </View>
         <View style={styles.textWrapper}>
           <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.ingredients}>{item.ingredients.join(', ')}</Text>
+          <Text style={styles.ingredients}>{item.ingredients.join(", ")}</Text>
           <Text style={styles.ingredients}>&#x20B4; {item.price}</Text>
         </View>
       </TouchableOpacity>
@@ -64,5 +65,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#ffff",
     marginTop: 4,
-  }
+  },
 });

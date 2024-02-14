@@ -1,13 +1,30 @@
 import { ActivityIndicator, StyleSheet, View, FlatList } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import CardView from "./CardView";
-import useFetch from "../../hook/useFetch";
-
 
 const CardsOnScreenNew = () => {
-  const { data, isLoading, error } = useFetch();
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
+  const getData = async () => {
+    setIsLoading(true);
+    try {
+      const resp = await fetch("https://api.sampleapis.com/coffee/hot");
+      const json = await resp.json();
+      setData(json);
+      setIsLoading(false);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <View style={styles.wrapper}>
