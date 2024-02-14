@@ -40,7 +40,7 @@ const CardDescriptionScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <Image
-        source={{ uri: item.imageUrl }}
+        source={{ uri: item.image }}
         // source={require("../assets/images/icedCoffeeLatteWithCinnamonWhippedCream.webp")}
         style={styles.img}
       />
@@ -76,18 +76,20 @@ const CardDescriptionScreen = ({ navigation }) => {
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
           <Text style={styles.text}>{item.description}</Text>
+          <Text style={styles.description}>Ingredients: </Text>
+          <Text>{item.ingredients.join(', ')}</Text>
         </View>
 
-        <View style={{ marginBottom: 10 }}>
+        <View style={{ marginBottom: 10, marginTop: 10 }}>
           <View style={styles.location}>
             <View style={{ flexDirection: "row" }}>
               <MaterialIcons name="location-on" size={24} />
-              <Text>{item.card_location}</Text>
+              {/* card_location */}
             </View>
 
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
               <MaterialCommunityIcons name="truck-fast-outline" size={24} />
-              <Text>Delivery &#x20B4;20</Text>
+              <Text style={{marginLeft: 4}}>Delivery &#x20B4;20</Text>
             </View>
           </View>
         </View>
@@ -185,10 +187,11 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: "Roboto500",
     fontSize: 18,
+    marginBottom: 4,
   },
   text: {
     fontFamily: "Roboto400",
-    fontSize: 10,
+    fontSize: 12,
     textAlign: "justify",
     marginBottom: 10,
   },

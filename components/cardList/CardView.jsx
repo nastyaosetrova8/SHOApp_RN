@@ -12,7 +12,7 @@ const CardView = ({ item }) => {
       <View style={styles.wrapper}>
         <View style={styles.imgWrapper}>
           <Image
-            source={{ uri: item.imageUrl }}
+            source={{ uri: item.image }}
             style={styles.img}
           />
         </View>
@@ -21,7 +21,7 @@ const CardView = ({ item }) => {
             {item.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            {item.supplier}
+            {item.ingredients.join(', ')}
           </Text>
           <Text style={styles.price}>&#x20B4; {item.price}</Text>
         </View>

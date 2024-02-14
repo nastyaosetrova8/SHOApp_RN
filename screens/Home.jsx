@@ -6,16 +6,18 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+// import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import { Entrance } from "../components";
 import SliderCards from "../components/home/SliderCards";
 import Titles from "../components/home/Titles";
 import Cards from "../components/cardList/Cards";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <View>
       <View style={styles.barWrapper}>
         <View style={styles.bar}>
           <MaterialIcons name="location-on" size={24} />
@@ -23,7 +25,7 @@ const Home = () => {
           <Text style={styles.location}>Kyiv Ukraine</Text>
 
           <View style={{ alignItems: "flesx-end" }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPressIn={() => navigation.navigate("BasketScreen")}>
               <Entypo name="shopping-bag" size={24} />
             </TouchableOpacity>
           </View>
@@ -35,7 +37,7 @@ const Home = () => {
         <Titles />
         <Cards />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
   },
   barWrapper: {
     marginHorizontal: 22,
-    marginTop: 12,
+    marginTop: 60,
   },
   bar: {
     flexDirection: "row",

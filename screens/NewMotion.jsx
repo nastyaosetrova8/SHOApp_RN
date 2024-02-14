@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { CardsOnScreenNew } from "../components";
+
 
 const NewMotion = ({ navigation }) => {
   return (
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    // backgroundColor: "#BFA47B",
+    backgroundColor: "#BFA47B",
   },
   topLine: {
     position: "absolute",

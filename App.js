@@ -1,10 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import BottomTabs from "./navigation/BottomTabs";
 import { CardDescriptionScreen, NewMotion } from "./screens";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import BasketScreen from "./screens/BasketScreen";
 
-const NestedScreen = createNativeStackNavigator();
+const NestedScreen = createStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -37,8 +40,15 @@ export default function App() {
           }}
         />
         <NestedScreen.Screen
-          name="CartsList"
+          name="NewMotion"
           component={NewMotion}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <NestedScreen.Screen
+          name="BasketScreen"
+          component={BasketScreen}
           options={{
             headerShown: false,
           }}

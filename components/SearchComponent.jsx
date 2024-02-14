@@ -3,19 +3,19 @@ import { SHADOW } from "../assets/vars";
 import { useNavigation } from "@react-navigation/native";
 
 
-const SearchComponent = ({ item }) => {
+const SearchComponent = ({item}) => {
 
     const navigation = useNavigation();
   return (
     <View>
       <TouchableOpacity style={styles.wrapper} onPress={() => navigation.navigate('CardDescriptionScreen', {item})}>
         <View style={styles.imgWrapper}>
-          <Image source={{ uri: item.imageUrl }} style={styles.img} />
+          <Image source={{ uri: item.image }} style={styles.img} />
         </View>
         <View style={styles.textWrapper}>
           <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.supplier}>{item.supplier}</Text>
-          <Text style={styles.supplier}>&#x20B4; {item.price}</Text>
+          <Text style={styles.ingredients}>{item.ingredients.join(', ')}</Text>
+          <Text style={styles.ingredients}>&#x20B4; {item.price}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     // color:
   },
-  supplier: {
+  ingredients: {
     fontFamily: "Roboto400",
     fontSize: 12,
     color: "#ffff",

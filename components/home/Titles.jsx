@@ -10,7 +10,7 @@ const Titles = () => {
     <View style={styles.wrapper}>
       <View style={styles.title}>
         <Text style={styles.titleText}>New</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("CartsList")}>
+        <TouchableOpacity onPress={() => navigation.navigate("NewMotion")}>
           <Feather name="grid" size={24} color="#503206" />
         </TouchableOpacity>
       </View>

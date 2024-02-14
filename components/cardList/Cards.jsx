@@ -22,8 +22,8 @@ const Cards = () => {
       : (
         <FlatList
           data={data}
-          keyExtractor={(item) => item._id}
-          renderItem={({ item }) => <CardView item={item} />}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <CardView key={item.id} item={item} />}
           horizontal
           contentContainerStyle={{ columnGap: 10 }}
         />
