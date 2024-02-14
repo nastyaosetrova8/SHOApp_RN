@@ -16,6 +16,6 @@ By clicking on the search bar, another window opens, where you can quickly find 
 <img width="450" alt="3" src="https://github.com/nastyaosetrova8/SHOApp_RN/assets/126395277/17322b3c-2256-45d9-b396-83e10fcb4dac">
 
 Open this link on your Android devices (or scan the QR code) to install the app:
-https://expo.dev/accounts/nastyaosetrova/projects/SHOApp_RN/builds/081d50a8-a1bc-41dc-9819-e2f7afdbf3ea
+https://expo.dev/accounts/nastyaosetrova/projects/SHOApp_RN/builds/2cfc9867-a572-40c6-983c-d3a6fe3b59bc
 
-<img width="281" alt="Знімок екрана 2024-02-11 о 18 22 54" src="https://github.com/nastyaosetrova8/SHOApp_RN/assets/126395277/0f3bdb4f-2260-45bf-9fc0-2ed2eff8cce2">
+<img width="281" alt="Знімок екрана 2024-02-14 о 14 07 32" src="https://github.com/nastyaosetrova8/SHOApp_RN/assets/126395277/64fd206c-da8e-434c-8217-033da623385d">
